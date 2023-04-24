@@ -131,7 +131,7 @@ class LoRA_Controller(LoRA_Controller_Base):
 
 #lora with start and end
 class LoRA_StartEnd_Controller(LoRA_Controller_Base):
-    def __init__(self, name : str, weight : float, start : float | int, end : float | int):
+    def __init__(self, name : str, weight : float, start : float or int, end : float or int):
         super().__init__()
         self.name = name
         self.weight = float(weight)
@@ -157,7 +157,7 @@ class LoRA_StartEnd_Controller(LoRA_Controller_Base):
 
 #switch lora
 class LoRA_Switcher_Controller(LoRA_Controller_Base):
-    def __init__(self, lora_dist : List[LoRA_data], start : float | int, end : float | int):
+    def __init__(self, lora_dist : List[LoRA_data], start : float or int, end : float or int):
         super().__init__()
         self.lora_dist = lora_dist
         the_list : List[str] = []
@@ -278,7 +278,7 @@ def extra_net_split(input_str : str, pattern : str):
         return [input_str]
     return result
 
-def extra_net_re_search(pattern : str | re.Pattern[str], input_str : str):
+def extra_net_re_search(pattern : str or re.Pattern[str], input_str : str):
     result = MySearchResult()
     extra_net_list : List[str] = []
     escape_obj_list : List[str] = []
